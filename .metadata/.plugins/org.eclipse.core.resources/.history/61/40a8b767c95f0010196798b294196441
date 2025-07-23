@@ -1,0 +1,12 @@
+package Demo;
+import java.util.Scanner;
+
+public class Learning {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Data :");
+		String InputData = scanner.nextLine();
+		System.out.println("Date Your Entred : " + InputData);
+	}
+}

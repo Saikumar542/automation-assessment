@@ -1,0 +1,19 @@
+package Demo;
+import java.util.Scanner;
+
+public class Learning {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Data :");
+		int InputData = scanner.nextInt();
+		System.out.println("Date Your Entred : " + InputData);
+		int no, rev=0, r;
+		while (InputData>0) {
+			r = InputData%10;
+			rev = rev+10+r;
+			no = no/10;	
+		}
+		System.out.println("Print Reverse number"+ rev);
+	}
+}

@@ -1,0 +1,13 @@
+package Demo;
+
+import java.util.Scanner;
+
+public class Learning {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		String InputData = scanner.nextLine();
+		System.out.println("Enter the String");
+		System.out.println(InputData);
+	}
+}

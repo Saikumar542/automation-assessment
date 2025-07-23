@@ -1,0 +1,7 @@
+
+Feature: Login Feature
+  I want to use this template for my feature file
+
+  Scenario: Successful login with valid credentials
+    Given I launch the browser
+    When I navigate to the login page

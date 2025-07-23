@@ -1,0 +1,21 @@
+package Demo;
+import java.util.Scanner;
+
+public class Learning {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Data :");
+		int no, rev=0, r;
+		no = scanner.nextInt();
+		while (no>0) {
+			r = no%10;
+			System.out.println("Print r"+r);
+			rev = rev*10+r;
+			System.out.println("Print rev"+rev);
+			no = no/10;
+			System.out.println("Print no"+ no);
+		}
+		System.out.println("Print Reverse number"+ rev);
+	}
+}

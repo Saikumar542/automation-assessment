@@ -1,0 +1,39 @@
+package stepdefinitions;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import utilities.DriverFactory;
+
+public class LoginSteps {
+	WebDriver driver;
+
+    @Given("I launch the browser")
+    public void i_launch_the_browser() {
+        driver = DriverFactory.getDriver();
+    }
+
+    @When("login with Invalid credentials")
+    public void i_navigate_to_the_login_page() throws InterruptedException {
+        driver.get("https://www.saucedemo.com/");
+        driver.navigate().refresh();
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("//input[@placeholder=\"Username\"]")).sendKeys("Testing");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@placeholder=\"Password\"]")).sendKeys("123");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@id=\"login-button\"]")).click();
+        Thread.sleep(2000);
+        String actualErrorMessage = driver.findElement(By.xpath("//h3[@data-test=\"error\"]")).getText();
+        System.out.println("Error message :"+actualErrorMessage);
+        String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
+        driver.quit();
+        
+    }
+}
